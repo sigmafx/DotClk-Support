@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace DotClock
+namespace SceneEditor
 {
     partial class DmdEdit
     {

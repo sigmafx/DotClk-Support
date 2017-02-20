@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.IO;
 
-namespace DotClock
+namespace SceneEditor
 {
     public partial class Form1 : Form
     {

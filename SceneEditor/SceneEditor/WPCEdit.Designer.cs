@@ -1,4 +1,4 @@
-﻿namespace DotClock
+﻿namespace SceneEditor
 {
     partial class WPCEdit
     {
@@ -33,7 +33,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnStartStop = new System.Windows.Forms.Button();
-            this.dmdPreview = new DotClock.DmdPreview();
+            this.dmdPreview = new SceneEditor.DmdPreview();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 

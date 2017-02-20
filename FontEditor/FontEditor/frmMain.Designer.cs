@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace FontEditor
 {
     partial class MainForm
     {
@@ -57,7 +57,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.lblFileDetails = new System.Windows.Forms.Label();
-            this.fontEdit1 = new WindowsFormsApplication1.FontEdit();
+            this.fontEdit1 = new FontEditor.FontEdit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -380,7 +380,7 @@
             this.fontEdit1.IsDirty = false;
             this.fontEdit1.Location = new System.Drawing.Point(12, 197);
             this.fontEdit1.Mask = null;
-            this.fontEdit1.Mode = WindowsFormsApplication1.FontEdit.DrawMode.DOT;
+            this.fontEdit1.Mode = FontEditor.FontEdit.DrawMode.DOT;
             this.fontEdit1.Name = "fontEdit1";
             this.fontEdit1.Size = new System.Drawing.Size(150, 150);
             this.fontEdit1.TabIndex = 1;

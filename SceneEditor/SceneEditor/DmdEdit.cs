@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace DotClock
+namespace SceneEditor
 {
     public partial class DmdEdit : UserControl
     {

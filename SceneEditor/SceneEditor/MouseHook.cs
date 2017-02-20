@@ -27,7 +27,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using DotClock;
+using SceneEditor;
 
 namespace RamGecTools
 {

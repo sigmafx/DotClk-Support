@@ -1,4 +1,4 @@
-﻿namespace DotClock
+﻿namespace SceneEditor
 {
     partial class Form1
     {
@@ -62,7 +62,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dmdEdit1 = new DotClock.DmdEdit();
+            this.dmdEdit1 = new SceneEditor.DmdEdit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();

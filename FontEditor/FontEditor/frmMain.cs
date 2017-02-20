@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
 
-namespace WindowsFormsApplication1
+namespace FontEditor
 {
     public partial class MainForm : Form
     {

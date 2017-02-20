@@ -7,8 +7,8 @@
     <ProjectGuid>{BA04D1BC-26FF-435B-BE85-9F259F3CBD32}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FontEdit</RootNamespace>
-    <AssemblyName>FontEdit</AssemblyName>
+    <RootNamespace>FontEditor</RootNamespace>
+    <AssemblyName>FontEditor</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -74,9 +74,11 @@
     </Compile>
     <EmbeddedResource Include="FontEdit.resx">
       <DependentUpon>FontEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewChar.resx">
       <DependentUpon>frmNewChar.cs</DependentUpon>

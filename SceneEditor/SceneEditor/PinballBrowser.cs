@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace DotClock
+namespace SceneEditor
 {
     public partial class PinballBrowser : Form
     {

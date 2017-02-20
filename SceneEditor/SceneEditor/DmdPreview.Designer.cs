@@ -1,4 +1,4 @@
-﻿namespace DotClock
+﻿namespace SceneEditor
 {
     partial class DmdPreview
     {
