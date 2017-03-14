@@ -52,6 +52,10 @@ namespace SceneEditor
                 writer.Write(LastFrameLayer);
                 writer.Write(LastBlank);
 
+                // Leave a bit of space for future features
+                byte[] blank = new Byte[20];
+                writer.Write(blank);
+
                 // Write dotmaps
                 for (int idx = 0; idx < dots.Count; idx++)
                 {
@@ -146,6 +150,8 @@ namespace SceneEditor
                     LastFrameDelay = reader.ReadUInt16();
                     LastFrameLayer = reader.ReadUInt16();
                     LastBlank = reader.ReadUInt16();
+
+                    reader.ReadBytes(20);
                 }
 
                 // Set screen items
@@ -214,7 +220,7 @@ namespace SceneEditor
 
         private void SetDmdImage(int idx)
         {
-            if(dots[idx] != null)
+            if (dots[idx] != null)
             {
                 // Set the dots
                 dmdEdit1.dots = dots[idx];
@@ -253,9 +259,9 @@ namespace SceneEditor
         {
             bool empty = true;
 
-            foreach(byte item in dmdEdit1.mask)
+            foreach (byte item in dmdEdit1.mask)
             {
-                if(item != 0x00)
+                if (item != 0x00)
                 {
                     empty = false;
                     break;
@@ -277,7 +283,7 @@ namespace SceneEditor
 
             // First frame delay
             value = txtFirstFrameDelay.Text;
-            if(!int.TryParse(value, out parseValue))
+            if (!int.TryParse(value, out parseValue))
             {
                 parseValue = 0;
             }
@@ -395,7 +401,7 @@ namespace SceneEditor
         private void btnLoad_Click(object sender, EventArgs e)
         {
             // Scene dirty?
-            if(IsDirty)
+            if (IsDirty)
             {
                 // Check with the user that they're happy to lose the changes
                 if (MessageBox.Show(this, "Scene is changed. Continue without saving?", "Scene Editor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -409,7 +415,7 @@ namespace SceneEditor
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Scene File|*.scn";
             ofd.Title = "Load...";
-            if(ofd.ShowDialog() == DialogResult.OK && ofd.FileName != String.Empty)
+            if (ofd.ShowDialog() == DialogResult.OK && ofd.FileName != String.Empty)
             {
                 // Clear the form
                 ClearForm();
@@ -509,7 +515,7 @@ namespace SceneEditor
 
         private void cbFlatColour_CheckedChanged(object sender, EventArgs e)
         {
-            if(cbFlatColour.Checked)
+            if (cbFlatColour.Checked)
             {
                 // Flat colour required, set all palette entries (except 0) to Red 0xFF
                 for (int idx = 0; idx < 16; idx++)
@@ -539,9 +545,9 @@ namespace SceneEditor
                 mask.Remove(cur);
 
                 // Renumber all other masks
-                for(int idx = cur + 1; idx < dots.Count; idx++)
+                for (int idx = cur + 1; idx < dots.Count; idx++)
                 {
-                    if(mask.ContainsKey(idx))
+                    if (mask.ContainsKey(idx))
                     {
                         mask.Add(idx - 1, mask[idx]);
                         mask.Remove(idx);
@@ -563,7 +569,7 @@ namespace SceneEditor
                 {
                     if (cur == dots.Count - 1)
                     {
-                        if(scrlFrame.Value > 0)
+                        if (scrlFrame.Value > 0)
                         {
                             valuePrev -= 1;
                             scrlFrame.Value -= 1;
@@ -579,7 +585,7 @@ namespace SceneEditor
 
         private void radPen_CheckedChanged(object sender, EventArgs e)
         {
-            if(radPen.Checked)
+            if (radPen.Checked)
             {
                 // Switch to pen mode
                 dmdEdit1.Fill = false;
@@ -588,7 +594,7 @@ namespace SceneEditor
 
         private void radFill_CheckedChanged(object sender, EventArgs e)
         {
-            if(radFill.Checked)
+            if (radFill.Checked)
             {
                 // Switch to fill mode
                 dmdEdit1.Fill = true;

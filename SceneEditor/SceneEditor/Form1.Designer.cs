@@ -41,8 +41,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkClock = new System.Windows.Forms.CheckBox();
             this.txtFrameDelay = new System.Windows.Forms.TextBox();
-            this.txtFilename = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtFilename = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -51,18 +51,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearMask = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dmdEdit1 = new SceneEditor.DmdEdit();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtFirstFrameDelay = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.chkFirstBlank = new System.Windows.Forms.CheckBox();
             this.chkFirstClock = new System.Windows.Forms.CheckBox();
+            this.txtFirstFrameDelay = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chkLastBlank = new System.Windows.Forms.CheckBox();
             this.chkLastClock = new System.Windows.Forms.CheckBox();
             this.txtLastFrameDelay = new System.Windows.Forms.TextBox();
-            this.chkFirstBlank = new System.Windows.Forms.CheckBox();
-            this.chkLastBlank = new System.Windows.Forms.CheckBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dmdEdit1 = new SceneEditor.DmdEdit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -104,7 +104,7 @@
             // 
             this.lblFrame.Location = new System.Drawing.Point(6, 158);
             this.lblFrame.Name = "lblFrame";
-            this.lblFrame.Size = new System.Drawing.Size(317, 22);
+            this.lblFrame.Size = new System.Drawing.Size(230, 22);
             this.lblFrame.TabIndex = 9;
             // 
             // btnSaveAs
@@ -207,6 +207,15 @@
             this.txtFrameDelay.TabIndex = 3;
             this.txtFrameDelay.Text = "100";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Frame Delay:";
+            // 
             // txtFilename
             // 
             this.txtFilename.BackColor = System.Drawing.SystemColors.Window;
@@ -216,15 +225,6 @@
             this.txtFilename.Name = "txtFilename";
             this.txtFilename.Size = new System.Drawing.Size(462, 13);
             this.txtFilename.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Frame Delay:";
             // 
             // label2
             // 
@@ -320,6 +320,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Frames";
             // 
+            // dmdEdit1
+            // 
+            this.dmdEdit1.BrushSize = 1;
+            this.dmdEdit1.IsDirty = false;
+            this.dmdEdit1.Location = new System.Drawing.Point(6, 19);
+            this.dmdEdit1.Name = "dmdEdit1";
+            this.dmdEdit1.Size = new System.Drawing.Size(512, 128);
+            this.dmdEdit1.TabIndex = 4;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label5);
@@ -333,14 +342,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "First Frame";
             // 
-            // txtFirstFrameDelay
+            // label5
             // 
-            this.txtFirstFrameDelay.Location = new System.Drawing.Point(115, 18);
-            this.txtFirstFrameDelay.MaxLength = 6;
-            this.txtFirstFrameDelay.Name = "txtFirstFrameDelay";
-            this.txtFirstFrameDelay.Size = new System.Drawing.Size(49, 20);
-            this.txtFirstFrameDelay.TabIndex = 22;
-            this.txtFirstFrameDelay.Text = "0";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Frame Delay:";
+            // 
+            // chkFirstBlank
+            // 
+            this.chkFirstBlank.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkFirstBlank.Location = new System.Drawing.Point(6, 70);
+            this.chkFirstBlank.Name = "chkFirstBlank";
+            this.chkFirstBlank.Size = new System.Drawing.Size(158, 24);
+            this.chkFirstBlank.TabIndex = 23;
+            this.chkFirstBlank.TabStop = false;
+            this.chkFirstBlank.Text = "Blank";
+            this.chkFirstBlank.UseVisualStyleBackColor = true;
             // 
             // chkFirstClock
             // 
@@ -352,6 +372,15 @@
             this.chkFirstClock.TabStop = false;
             this.chkFirstClock.Text = "Clock On Top";
             this.chkFirstClock.UseVisualStyleBackColor = true;
+            // 
+            // txtFirstFrameDelay
+            // 
+            this.txtFirstFrameDelay.Location = new System.Drawing.Point(115, 18);
+            this.txtFirstFrameDelay.MaxLength = 6;
+            this.txtFirstFrameDelay.Name = "txtFirstFrameDelay";
+            this.txtFirstFrameDelay.Size = new System.Drawing.Size(49, 20);
+            this.txtFirstFrameDelay.TabIndex = 22;
+            this.txtFirstFrameDelay.Text = "0";
             // 
             // groupBox4
             // 
@@ -365,6 +394,26 @@
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Last Frame";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Frame Delay:";
+            // 
+            // chkLastBlank
+            // 
+            this.chkLastBlank.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkLastBlank.Location = new System.Drawing.Point(6, 70);
+            this.chkLastBlank.Name = "chkLastBlank";
+            this.chkLastBlank.Size = new System.Drawing.Size(158, 24);
+            this.chkLastBlank.TabIndex = 24;
+            this.chkLastBlank.TabStop = false;
+            this.chkLastBlank.Text = "Blank";
+            this.chkLastBlank.UseVisualStyleBackColor = true;
             // 
             // chkLastClock
             // 
@@ -386,28 +435,6 @@
             this.txtLastFrameDelay.TabIndex = 22;
             this.txtLastFrameDelay.Text = "0";
             // 
-            // chkFirstBlank
-            // 
-            this.chkFirstBlank.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkFirstBlank.Location = new System.Drawing.Point(6, 70);
-            this.chkFirstBlank.Name = "chkFirstBlank";
-            this.chkFirstBlank.Size = new System.Drawing.Size(158, 24);
-            this.chkFirstBlank.TabIndex = 23;
-            this.chkFirstBlank.TabStop = false;
-            this.chkFirstBlank.Text = "Blank";
-            this.chkFirstBlank.UseVisualStyleBackColor = true;
-            // 
-            // chkLastBlank
-            // 
-            this.chkLastBlank.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkLastBlank.Location = new System.Drawing.Point(6, 70);
-            this.chkLastBlank.Name = "chkLastBlank";
-            this.chkLastBlank.Size = new System.Drawing.Size(158, 24);
-            this.chkLastBlank.TabIndex = 24;
-            this.chkLastBlank.TabStop = false;
-            this.chkLastBlank.Text = "Blank";
-            this.chkLastBlank.UseVisualStyleBackColor = true;
-            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(466, 392);
@@ -417,33 +444,6 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Frame Delay:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Frame Delay:";
-            // 
-            // dmdEdit1
-            // 
-            this.dmdEdit1.BrushSize = 1;
-            this.dmdEdit1.IsDirty = false;
-            this.dmdEdit1.Location = new System.Drawing.Point(6, 19);
-            this.dmdEdit1.Name = "dmdEdit1";
-            this.dmdEdit1.Size = new System.Drawing.Size(512, 128);
-            this.dmdEdit1.TabIndex = 4;
             // 
             // Form1
             // 
