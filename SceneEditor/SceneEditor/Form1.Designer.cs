@@ -51,7 +51,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearMask = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dmdEdit1 = new SceneEditor.DmdEdit();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chkFirstBlank = new System.Windows.Forms.CheckBox();
@@ -63,16 +62,20 @@
             this.chkLastClock = new System.Windows.Forms.CheckBox();
             this.txtLastFrameDelay = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cmbClockStyle = new System.Windows.Forms.ComboBox();
+            this.dmdEdit1 = new SceneEditor.DmdEdit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(247, 392);
+            this.btnSave.Location = new System.Drawing.Point(247, 401);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 3;
@@ -109,7 +112,7 @@
             // 
             // btnSaveAs
             // 
-            this.btnSaveAs.Location = new System.Drawing.Point(328, 392);
+            this.btnSaveAs.Location = new System.Drawing.Point(328, 401);
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.Size = new System.Drawing.Size(75, 23);
             this.btnSaveAs.TabIndex = 10;
@@ -119,7 +122,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(93, 392);
+            this.btnLoad.Location = new System.Drawing.Point(93, 401);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 11;
@@ -183,7 +186,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(192, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(170, 100);
+            this.groupBox1.Size = new System.Drawing.Size(170, 66);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Other Frames";
@@ -237,7 +240,7 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(12, 392);
+            this.btnNew.Location = new System.Drawing.Point(12, 401);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
             this.btnNew.TabIndex = 17;
@@ -313,21 +316,12 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.cbFlatColour);
             this.groupBox2.Controls.Add(this.scrlFrame);
-            this.groupBox2.Location = new System.Drawing.Point(12, 138);
+            this.groupBox2.Location = new System.Drawing.Point(12, 147);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(529, 248);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Frames";
-            // 
-            // dmdEdit1
-            // 
-            this.dmdEdit1.BrushSize = 1;
-            this.dmdEdit1.IsDirty = false;
-            this.dmdEdit1.Location = new System.Drawing.Point(6, 19);
-            this.dmdEdit1.Name = "dmdEdit1";
-            this.dmdEdit1.Size = new System.Drawing.Size(512, 128);
-            this.dmdEdit1.TabIndex = 4;
             // 
             // groupBox3
             // 
@@ -337,7 +331,7 @@
             this.groupBox3.Controls.Add(this.txtFirstFrameDelay);
             this.groupBox3.Location = new System.Drawing.Point(12, 32);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(170, 100);
+            this.groupBox3.Size = new System.Drawing.Size(170, 109);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "First Frame";
@@ -390,7 +384,7 @@
             this.groupBox4.Controls.Add(this.txtLastFrameDelay);
             this.groupBox4.Location = new System.Drawing.Point(371, 32);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(170, 100);
+            this.groupBox4.Size = new System.Drawing.Size(170, 109);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Last Frame";
@@ -437,7 +431,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(466, 392);
+            this.btnClose.Location = new System.Drawing.Point(466, 401);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 23;
@@ -445,11 +439,45 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.cmbClockStyle);
+            this.groupBox5.Location = new System.Drawing.Point(192, 99);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(170, 42);
+            this.groupBox5.TabIndex = 24;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Clock Style";
+            // 
+            // cmbClockStyle
+            // 
+            this.cmbClockStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbClockStyle.FormattingEnabled = true;
+            this.cmbClockStyle.Items.AddRange(new object[] {
+            "Standard",
+            "Small Left",
+            "Small Centre",
+            "Small Right"});
+            this.cmbClockStyle.Location = new System.Drawing.Point(6, 15);
+            this.cmbClockStyle.Name = "cmbClockStyle";
+            this.cmbClockStyle.Size = new System.Drawing.Size(156, 21);
+            this.cmbClockStyle.TabIndex = 0;
+            // 
+            // dmdEdit1
+            // 
+            this.dmdEdit1.BrushSize = 1;
+            this.dmdEdit1.IsDirty = false;
+            this.dmdEdit1.Location = new System.Drawing.Point(6, 19);
+            this.dmdEdit1.Name = "dmdEdit1";
+            this.dmdEdit1.Size = new System.Drawing.Size(512, 128);
+            this.dmdEdit1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 423);
+            this.ClientSize = new System.Drawing.Size(551, 433);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -476,6 +504,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,6 +546,8 @@
         private System.Windows.Forms.CheckBox chkLastClock;
         private System.Windows.Forms.TextBox txtLastFrameDelay;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ComboBox cmbClockStyle;
     }
 }
 

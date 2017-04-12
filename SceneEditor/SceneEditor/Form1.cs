@@ -36,6 +36,7 @@ namespace SceneEditor
                 ushort LastFrameDelay = Convert.ToUInt16(txtLastFrameDelay.Text);
                 ushort LastFrameLayer = Convert.ToUInt16(chkLastClock.Checked ? 1 : 0);
                 ushort LastBlank = Convert.ToUInt16(chkLastBlank.Checked ? 1 : 0);
+                byte ClockStyle = Convert.ToByte(cmbClockStyle.SelectedIndex);
 
                 // Write Scene Header
                 writer.Write(Version);
@@ -51,9 +52,10 @@ namespace SceneEditor
                 writer.Write(LastFrameDelay);
                 writer.Write(LastFrameLayer);
                 writer.Write(LastBlank);
+                writer.Write(ClockStyle);
 
                 // Leave a bit of space for future features
-                byte[] blank = new Byte[20];
+                byte[] blank = new Byte[19];
                 writer.Write(blank);
 
                 // Write dotmaps
@@ -137,6 +139,8 @@ namespace SceneEditor
                 ushort LastFrameDelay = 0;
                 ushort LastFrameLayer = 0;
                 ushort LastBlank = 0;
+                byte ClockStyle = 0;
+
 
                 for (int idxScene = 0; idxScene < CntItemStoryboard; idxScene++)
                 {
@@ -151,7 +155,9 @@ namespace SceneEditor
                     LastFrameLayer = reader.ReadUInt16();
                     LastBlank = reader.ReadUInt16();
 
-                    reader.ReadBytes(20);
+                    ClockStyle = reader.ReadByte();
+
+                    reader.ReadBytes(19);
                 }
 
                 // Set screen items
@@ -165,6 +171,8 @@ namespace SceneEditor
                 txtLastFrameDelay.Text = Convert.ToString(LastFrameDelay);
                 chkLastClock.Checked = (LastFrameLayer == 0 ? false : true);
                 chkLastBlank.Checked = (LastBlank == 0 ? false : true);
+
+                cmbClockStyle.SelectedIndex = ClockStyle;
 
                 for (int idx = 0; idx < CntItemDotmap; idx++)
                 {
