@@ -51,6 +51,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearMask = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dmdEdit1 = new SceneEditor.DmdEdit();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chkFirstBlank = new System.Windows.Forms.CheckBox();
@@ -64,7 +65,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cmbClockStyle = new System.Windows.Forms.ComboBox();
-            this.dmdEdit1 = new SceneEditor.DmdEdit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -323,6 +323,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Frames";
             // 
+            // dmdEdit1
+            // 
+            this.dmdEdit1.BrushSize = 1;
+            this.dmdEdit1.IsDirty = false;
+            this.dmdEdit1.Location = new System.Drawing.Point(6, 19);
+            this.dmdEdit1.Name = "dmdEdit1";
+            this.dmdEdit1.Size = new System.Drawing.Size(512, 128);
+            this.dmdEdit1.TabIndex = 4;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label5);
@@ -457,20 +466,13 @@
             "Standard",
             "Small Left",
             "Small Centre",
-            "Small Right"});
+            "Small Right",
+            "Small Mid Left",
+            "Small Mid Right"});
             this.cmbClockStyle.Location = new System.Drawing.Point(6, 15);
             this.cmbClockStyle.Name = "cmbClockStyle";
             this.cmbClockStyle.Size = new System.Drawing.Size(156, 21);
             this.cmbClockStyle.TabIndex = 0;
-            // 
-            // dmdEdit1
-            // 
-            this.dmdEdit1.BrushSize = 1;
-            this.dmdEdit1.IsDirty = false;
-            this.dmdEdit1.Location = new System.Drawing.Point(6, 19);
-            this.dmdEdit1.Name = "dmdEdit1";
-            this.dmdEdit1.Size = new System.Drawing.Size(512, 128);
-            this.dmdEdit1.TabIndex = 4;
             // 
             // Form1
             // 
