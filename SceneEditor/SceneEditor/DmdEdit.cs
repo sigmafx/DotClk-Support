@@ -32,7 +32,7 @@ namespace SceneEditor
             // Create a default palette
             for(int idx = 0; idx < palette.Count();  idx++)
             {
-                palette[idx] = Color.FromArgb(0xFF, idx * 17, 0, 0);
+                palette[idx] = Color.FromArgb(0xFF, (idx * 14) + (idx == 0 ? 0 : 45), 0, 0);
             }
 
             InitializeComponent();
