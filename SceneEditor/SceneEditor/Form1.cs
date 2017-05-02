@@ -37,6 +37,14 @@ namespace SceneEditor
                 ushort LastFrameLayer = Convert.ToUInt16(chkLastClock.Checked ? 1 : 0);
                 ushort LastBlank = Convert.ToUInt16(chkLastBlank.Checked ? 1 : 0);
                 byte ClockStyle = Convert.ToByte(cmbClockStyle.SelectedIndex);
+                byte CustomX = Convert.ToByte(txtCustomX.Text);
+                byte CustomY = Convert.ToByte(txtCustomY.Text);
+
+                if (ClockStyle != 6)
+                {
+                    CustomX = 0;
+                    CustomY = 0;
+                }
 
                 // Write Scene Header
                 writer.Write(Version);
@@ -53,9 +61,11 @@ namespace SceneEditor
                 writer.Write(LastFrameLayer);
                 writer.Write(LastBlank);
                 writer.Write(ClockStyle);
+                writer.Write(CustomX);
+                writer.Write(CustomY);
 
                 // Leave a bit of space for future features
-                byte[] blank = new Byte[19];
+                byte[] blank = new Byte[17];
                 writer.Write(blank);
 
                 // Write dotmaps
@@ -140,6 +150,8 @@ namespace SceneEditor
                 ushort LastFrameLayer = 0;
                 ushort LastBlank = 0;
                 byte ClockStyle = 0;
+                byte CustomX = 0;
+                byte CustomY = 0;
 
 
                 for (int idxScene = 0; idxScene < CntItemStoryboard; idxScene++)
@@ -157,7 +169,10 @@ namespace SceneEditor
 
                     ClockStyle = reader.ReadByte();
 
-                    reader.ReadBytes(19);
+                    CustomX = reader.ReadByte();
+                    CustomY = reader.ReadByte();
+
+                    reader.ReadBytes(17);
                 }
 
                 // Set screen items
@@ -173,6 +188,17 @@ namespace SceneEditor
                 chkLastBlank.Checked = (LastBlank == 0 ? false : true);
 
                 cmbClockStyle.SelectedIndex = ClockStyle;
+
+                if(ClockStyle == 6)
+                {
+                    txtCustomX.Text = Convert.ToString(CustomX);
+                    txtCustomY.Text = Convert.ToString(CustomY);
+                }
+                else
+                {
+                    txtCustomX.Text = "";
+                    txtCustomY.Text = "";
+                }
 
                 for (int idx = 0; idx < CntItemDotmap; idx++)
                 {
@@ -250,7 +276,7 @@ namespace SceneEditor
             dmdEdit1.Invalidate();
 
             // Set the frame details label
-            lblFrame.Text = String.Format("Frame {0} / {1}", idx + 1, dots.Count());
+            lblXY.Text = String.Format("Frame {0} / {1}", idx + 1, dots.Count());
         }
 
         private void ClearDmdImage()
@@ -260,7 +286,7 @@ namespace SceneEditor
             dmdEdit1.ClearDots();
 
             // Set the frame details label
-            lblFrame.Text = String.Empty;
+            lblXY.Text = String.Empty;
         }
 
         private void StoreDmdMask(int idx)
@@ -633,6 +659,40 @@ namespace SceneEditor
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFrameDelay_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkClock_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbClockStyle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbClockStyle.SelectedIndex == 6)
+            {
+                txtCustomX.Enabled = true;
+                txtCustomY.Enabled = true;
+            }
+            else
+            {
+                txtCustomX.Enabled = false;
+                txtCustomY.Enabled = false;
+            }
+        }
+
+        private void dmdEdit1_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblXY.Text = String.Format("{0}, {1}", (e.X * 128) / dmdEdit1.Width, (e.Y * 32) / dmdEdit1.Height);
         }
     }
 }
