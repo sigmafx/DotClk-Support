@@ -276,7 +276,7 @@ namespace SceneEditor
             dmdEdit1.Invalidate();
 
             // Set the frame details label
-            lblXY.Text = String.Format("Frame {0} / {1}", idx + 1, dots.Count());
+            lblFrame.Text = String.Format("Frame {0} / {1}", idx + 1, dots.Count());
         }
 
         private void ClearDmdImage()
@@ -286,7 +286,7 @@ namespace SceneEditor
             dmdEdit1.ClearDots();
 
             // Set the frame details label
-            lblXY.Text = String.Empty;
+            lblFrame.Text = String.Empty;
         }
 
         private void StoreDmdMask(int idx)

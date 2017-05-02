@@ -31,7 +31,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCapturePB = new System.Windows.Forms.Button();
             this.btnCaptureWPC = new System.Windows.Forms.Button();
-            this.lblXY = new System.Windows.Forms.Label();
+            this.lblFrame = new System.Windows.Forms.Label();
             this.btnSaveAs = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.cmbBrushSize = new System.Windows.Forms.ComboBox();
@@ -69,6 +69,7 @@
             this.txtCustomY = new System.Windows.Forms.TextBox();
             this.txtCustomX = new System.Windows.Forms.TextBox();
             this.dmdEdit1 = new SceneEditor.DmdEdit();
+            this.lblXY = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -107,12 +108,12 @@
             this.btnCaptureWPC.UseVisualStyleBackColor = true;
             this.btnCaptureWPC.Click += new System.EventHandler(this.btnCaptureWPC_Click);
             // 
-            // lblXY
+            // lblFrame
             // 
-            this.lblXY.Location = new System.Drawing.Point(5, 153);
-            this.lblXY.Name = "lblXY";
-            this.lblXY.Size = new System.Drawing.Size(230, 22);
-            this.lblXY.TabIndex = 9;
+            this.lblFrame.Location = new System.Drawing.Point(5, 153);
+            this.lblFrame.Name = "lblFrame";
+            this.lblFrame.Size = new System.Drawing.Size(230, 22);
+            this.lblFrame.TabIndex = 9;
             // 
             // btnSaveAs
             // 
@@ -312,13 +313,14 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblXY);
             this.groupBox2.Controls.Add(this.dmdEdit1);
             this.groupBox2.Controls.Add(this.btnClearMask);
             this.groupBox2.Controls.Add(this.btnCapturePB);
             this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.btnCaptureWPC);
             this.groupBox2.Controls.Add(this.btnDelete);
-            this.groupBox2.Controls.Add(this.lblXY);
+            this.groupBox2.Controls.Add(this.lblFrame);
             this.groupBox2.Controls.Add(this.cmbBrushSize);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.cbFlatColour);
@@ -522,6 +524,13 @@
             this.dmdEdit1.TabIndex = 4;
             this.dmdEdit1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dmdEdit1_MouseMove);
             // 
+            // lblXY
+            // 
+            this.lblXY.Location = new System.Drawing.Point(251, 153);
+            this.lblXY.Name = "lblXY";
+            this.lblXY.Size = new System.Drawing.Size(75, 22);
+            this.lblXY.TabIndex = 20;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,7 +575,7 @@
         private DmdEdit dmdEdit1;
         private System.Windows.Forms.Button btnCapturePB;
         private System.Windows.Forms.Button btnCaptureWPC;
-        private System.Windows.Forms.Label lblXY;
+        private System.Windows.Forms.Label lblFrame;
         private System.Windows.Forms.Button btnSaveAs;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.ComboBox cmbBrushSize;
@@ -603,6 +612,7 @@
         private System.Windows.Forms.TextBox txtCustomY;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblXY;
     }
 }
 
