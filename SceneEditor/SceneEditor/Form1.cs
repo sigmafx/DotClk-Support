@@ -37,8 +37,8 @@ namespace SceneEditor
                 ushort LastFrameLayer = Convert.ToUInt16(chkLastClock.Checked ? 1 : 0);
                 ushort LastBlank = Convert.ToUInt16(chkLastBlank.Checked ? 1 : 0);
                 byte ClockStyle = Convert.ToByte(cmbClockStyle.SelectedIndex);
-                byte CustomX = Convert.ToByte(txtCustomX.Text);
-                byte CustomY = Convert.ToByte(txtCustomY.Text);
+                byte CustomX = txtCustomX.Text.Length == 0 ? (Byte)0x00 : Convert.ToByte(txtCustomX.Text.Length);
+                byte CustomY = txtCustomY.Text.Length == 0 ? (Byte)0x00 : Convert.ToByte(txtCustomY.Text.Length);
 
                 if (ClockStyle != 6)
                 {
