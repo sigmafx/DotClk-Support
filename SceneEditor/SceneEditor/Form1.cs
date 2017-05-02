@@ -37,8 +37,8 @@ namespace SceneEditor
                 ushort LastFrameLayer = Convert.ToUInt16(chkLastClock.Checked ? 1 : 0);
                 ushort LastBlank = Convert.ToUInt16(chkLastBlank.Checked ? 1 : 0);
                 byte ClockStyle = Convert.ToByte(cmbClockStyle.SelectedIndex);
-                byte CustomX = txtCustomX.Text.Length == 0 ? (Byte)0x00 : Convert.ToByte(txtCustomX.Text.Length);
-                byte CustomY = txtCustomY.Text.Length == 0 ? (Byte)0x00 : Convert.ToByte(txtCustomY.Text.Length);
+                byte CustomX = txtCustomX.Text.Length == 0 ? (Byte)0x00 : Convert.ToByte(txtCustomX.Text);
+                byte CustomY = txtCustomY.Text.Length == 0 ? (Byte)0x00 : Convert.ToByte(txtCustomY.Text);
 
                 if (ClockStyle != 6)
                 {
@@ -313,31 +313,56 @@ namespace SceneEditor
         private void ValidateForm()
         {
             String value;
-            int parseValue;
+            int parseValueInt;
 
             // First frame delay
             value = txtFirstFrameDelay.Text;
-            if (!int.TryParse(value, out parseValue))
+            if (!int.TryParse(value, out parseValueInt))
             {
-                parseValue = 0;
+                parseValueInt = 0;
             }
-            txtFirstFrameDelay.Text = String.Format("{0}", parseValue);
+            txtFirstFrameDelay.Text = String.Format("{0}", parseValueInt);
 
             // Other frame delay
             value = txtFrameDelay.Text;
-            if (!int.TryParse(value, out parseValue))
+            if (!int.TryParse(value, out parseValueInt))
             {
-                parseValue = 0;
+                parseValueInt = 0;
             }
-            txtFrameDelay.Text = String.Format("{0}", parseValue);
+            txtFrameDelay.Text = String.Format("{0}", parseValueInt);
 
             // Last frame delay
             value = txtLastFrameDelay.Text;
-            if (!int.TryParse(value, out parseValue))
+            if (!int.TryParse(value, out parseValueInt))
             {
-                parseValue = 0;
+                parseValueInt = 0;
             }
-            txtLastFrameDelay.Text = String.Format("{0}", parseValue);
+            txtLastFrameDelay.Text = String.Format("{0}", parseValueInt);
+
+            // Custom X, y
+            if(cmbClockStyle.SelectedIndex == 6)
+            {
+                byte parseValueByte;
+
+                value = txtCustomX.Text;
+                if(!byte.TryParse(value, out parseValueByte))
+                {
+                    parseValueByte = 0;
+                }
+                txtCustomX.Text = String.Format("{0}", parseValueByte);
+
+                value = txtCustomY.Text;
+                if (!byte.TryParse(value, out parseValueByte))
+                {
+                    parseValueByte = 0;
+                }
+                txtCustomY.Text = String.Format("{0}", parseValueByte);
+            }
+            else
+            {
+                txtCustomX.Text = "";
+                txtCustomY.Text = "";
+            }
         }
 
         private void ClearForm()
