@@ -40,7 +40,7 @@ namespace SceneEditor
                 byte CustomX = txtCustomX.Text.Length == 0 ? (Byte)0x00 : Convert.ToByte(txtCustomX.Text);
                 byte CustomY = txtCustomY.Text.Length == 0 ? (Byte)0x00 : Convert.ToByte(txtCustomY.Text);
 
-                if (ClockStyle != 6)
+                if (ClockStyle == 0)
                 {
                     CustomX = 0;
                     CustomY = 0;
@@ -153,7 +153,6 @@ namespace SceneEditor
                 byte CustomX = 0;
                 byte CustomY = 0;
 
-
                 for (int idxScene = 0; idxScene < CntItemStoryboard; idxScene++)
                 {
                     FirstFrameDelay = reader.ReadUInt16();
@@ -187,18 +186,19 @@ namespace SceneEditor
                 chkLastClock.Checked = (LastFrameLayer == 0 ? false : true);
                 chkLastBlank.Checked = (LastBlank == 0 ? false : true);
 
-                cmbClockStyle.SelectedIndex = ClockStyle;
-
-                if(ClockStyle == 6)
-                {
-                    txtCustomX.Text = Convert.ToString(CustomX);
-                    txtCustomY.Text = Convert.ToString(CustomY);
-                }
-                else
+                if (ClockStyle == 0)
                 {
                     txtCustomX.Text = "";
                     txtCustomY.Text = "";
                 }
+                else
+                {
+                    ClockStyle = 1;
+                    txtCustomX.Text = Convert.ToString(CustomX);
+                    txtCustomY.Text = Convert.ToString(CustomY);
+                }
+
+                cmbClockStyle.SelectedIndex = ClockStyle;
 
                 for (int idx = 0; idx < CntItemDotmap; idx++)
                 {
@@ -340,7 +340,7 @@ namespace SceneEditor
             txtLastFrameDelay.Text = String.Format("{0}", parseValueInt);
 
             // Custom X, y
-            if(cmbClockStyle.SelectedIndex == 6)
+            if(cmbClockStyle.SelectedIndex == 1)
             {
                 byte parseValueByte;
 
@@ -703,7 +703,7 @@ namespace SceneEditor
 
         private void cmbClockStyle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbClockStyle.SelectedIndex == 6)
+            if(cmbClockStyle.SelectedIndex == 1)
             {
                 txtCustomX.Enabled = true;
                 txtCustomY.Enabled = true;

@@ -51,6 +51,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearMask = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblXY = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chkFirstBlank = new System.Windows.Forms.CheckBox();
@@ -63,13 +64,12 @@
             this.txtLastFrameDelay = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.cmbClockStyle = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCustomY = new System.Windows.Forms.TextBox();
             this.txtCustomX = new System.Windows.Forms.TextBox();
+            this.txtCustomY = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbClockStyle = new System.Windows.Forms.ComboBox();
             this.dmdEdit1 = new SceneEditor.DmdEdit();
-            this.lblXY = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -83,7 +83,7 @@
             this.btnSave.Location = new System.Drawing.Point(247, 401);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -93,7 +93,7 @@
             this.btnCapturePB.Location = new System.Drawing.Point(332, 153);
             this.btnCapturePB.Name = "btnCapturePB";
             this.btnCapturePB.Size = new System.Drawing.Size(90, 23);
-            this.btnCapturePB.TabIndex = 5;
+            this.btnCapturePB.TabIndex = 3;
             this.btnCapturePB.Text = "Capture PB";
             this.btnCapturePB.UseVisualStyleBackColor = true;
             this.btnCapturePB.Click += new System.EventHandler(this.btnCapturePB_Click);
@@ -103,7 +103,7 @@
             this.btnCaptureWPC.Location = new System.Drawing.Point(428, 153);
             this.btnCaptureWPC.Name = "btnCaptureWPC";
             this.btnCaptureWPC.Size = new System.Drawing.Size(90, 23);
-            this.btnCaptureWPC.TabIndex = 6;
+            this.btnCaptureWPC.TabIndex = 4;
             this.btnCaptureWPC.Text = "Capture WPC";
             this.btnCaptureWPC.UseVisualStyleBackColor = true;
             this.btnCaptureWPC.Click += new System.EventHandler(this.btnCaptureWPC_Click);
@@ -113,7 +113,7 @@
             this.lblFrame.Location = new System.Drawing.Point(5, 153);
             this.lblFrame.Name = "lblFrame";
             this.lblFrame.Size = new System.Drawing.Size(230, 22);
-            this.lblFrame.TabIndex = 9;
+            this.lblFrame.TabIndex = 1;
             // 
             // btnSaveAs
             // 
@@ -130,7 +130,7 @@
             this.btnLoad.Location = new System.Drawing.Point(93, 401);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnLoad.TabIndex = 11;
+            this.btnLoad.TabIndex = 8;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
@@ -151,7 +151,7 @@
             this.cmbBrushSize.Location = new System.Drawing.Point(396, 181);
             this.cmbBrushSize.Name = "cmbBrushSize";
             this.cmbBrushSize.Size = new System.Drawing.Size(121, 21);
-            this.cmbBrushSize.TabIndex = 12;
+            this.cmbBrushSize.TabIndex = 7;
             this.cmbBrushSize.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
@@ -160,7 +160,7 @@
             this.label1.Location = new System.Drawing.Point(333, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 13;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Pen Size";
             // 
             // scrlFrame
@@ -170,7 +170,7 @@
             this.scrlFrame.Maximum = 0;
             this.scrlFrame.Name = "scrlFrame";
             this.scrlFrame.Size = new System.Drawing.Size(237, 17);
-            this.scrlFrame.TabIndex = 14;
+            this.scrlFrame.TabIndex = 5;
             this.scrlFrame.ValueChanged += new System.EventHandler(this.scrlFrame_ValueChanged);
             // 
             // cbFlatColour
@@ -179,7 +179,7 @@
             this.cbFlatColour.Location = new System.Drawing.Point(332, 208);
             this.cbFlatColour.Name = "cbFlatColour";
             this.cbFlatColour.Size = new System.Drawing.Size(185, 24);
-            this.cbFlatColour.TabIndex = 15;
+            this.cbFlatColour.TabIndex = 11;
             this.cbFlatColour.Text = "Flatten Colour";
             this.cbFlatColour.UseVisualStyleBackColor = true;
             this.cbFlatColour.CheckedChanged += new System.EventHandler(this.cbFlatColour_CheckedChanged);
@@ -192,7 +192,7 @@
             this.groupBox1.Location = new System.Drawing.Point(195, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(170, 60);
-            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Other Frames";
             // 
@@ -202,7 +202,7 @@
             this.chkClock.Location = new System.Drawing.Point(6, 36);
             this.chkClock.Name = "chkClock";
             this.chkClock.Size = new System.Drawing.Size(156, 17);
-            this.chkClock.TabIndex = 4;
+            this.chkClock.TabIndex = 2;
             this.chkClock.Text = "Clock On Top";
             this.chkClock.UseVisualStyleBackColor = true;
             this.chkClock.CheckedChanged += new System.EventHandler(this.chkClock_CheckedChanged);
@@ -213,7 +213,7 @@
             this.txtFrameDelay.MaxLength = 6;
             this.txtFrameDelay.Name = "txtFrameDelay";
             this.txtFrameDelay.Size = new System.Drawing.Size(49, 20);
-            this.txtFrameDelay.TabIndex = 3;
+            this.txtFrameDelay.TabIndex = 1;
             this.txtFrameDelay.Text = "100";
             this.txtFrameDelay.TextChanged += new System.EventHandler(this.txtFrameDelay_TextChanged);
             // 
@@ -223,7 +223,7 @@
             this.label3.Location = new System.Drawing.Point(6, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Frame Delay:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -235,7 +235,7 @@
             this.txtFilename.Location = new System.Drawing.Point(79, 9);
             this.txtFilename.Name = "txtFilename";
             this.txtFilename.Size = new System.Drawing.Size(462, 13);
-            this.txtFilename.TabIndex = 2;
+            this.txtFilename.TabIndex = 1;
             // 
             // label2
             // 
@@ -251,7 +251,7 @@
             this.btnNew.Location = new System.Drawing.Point(12, 401);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
-            this.btnNew.TabIndex = 17;
+            this.btnNew.TabIndex = 7;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -261,7 +261,7 @@
             this.btnDelete.Location = new System.Drawing.Point(8, 209);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 18;
+            this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -272,7 +272,7 @@
             this.radFill.Location = new System.Drawing.Point(81, 3);
             this.radFill.Name = "radFill";
             this.radFill.Size = new System.Drawing.Size(72, 24);
-            this.radFill.TabIndex = 5;
+            this.radFill.TabIndex = 1;
             this.radFill.Text = "Fill";
             this.radFill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radFill.UseVisualStyleBackColor = true;
@@ -285,7 +285,7 @@
             this.radPen.Location = new System.Drawing.Point(3, 3);
             this.radPen.Name = "radPen";
             this.radPen.Size = new System.Drawing.Size(72, 24);
-            this.radPen.TabIndex = 19;
+            this.radPen.TabIndex = 0;
             this.radPen.TabStop = true;
             this.radPen.Text = "Pen";
             this.radPen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,14 +299,14 @@
             this.panel1.Location = new System.Drawing.Point(170, 205);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(153, 34);
-            this.panel1.TabIndex = 5;
+            this.panel1.TabIndex = 10;
             // 
             // btnClearMask
             // 
             this.btnClearMask.Location = new System.Drawing.Point(89, 209);
             this.btnClearMask.Name = "btnClearMask";
             this.btnClearMask.Size = new System.Drawing.Size(75, 23);
-            this.btnClearMask.TabIndex = 19;
+            this.btnClearMask.TabIndex = 9;
             this.btnClearMask.Text = "Clear Mask";
             this.btnClearMask.UseVisualStyleBackColor = true;
             this.btnClearMask.Click += new System.EventHandler(this.btnClearMask_Click);
@@ -328,9 +328,16 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 147);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(529, 248);
-            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Frames";
+            // 
+            // lblXY
+            // 
+            this.lblXY.Location = new System.Drawing.Point(251, 153);
+            this.lblXY.Name = "lblXY";
+            this.lblXY.Size = new System.Drawing.Size(75, 22);
+            this.lblXY.TabIndex = 2;
             // 
             // groupBox3
             // 
@@ -341,7 +348,7 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 26);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(170, 123);
-            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "First Frame";
             // 
@@ -351,7 +358,7 @@
             this.label5.Location = new System.Drawing.Point(6, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 24;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Frame Delay:";
             // 
             // chkFirstBlank
@@ -360,7 +367,7 @@
             this.chkFirstBlank.Location = new System.Drawing.Point(6, 59);
             this.chkFirstBlank.Name = "chkFirstBlank";
             this.chkFirstBlank.Size = new System.Drawing.Size(158, 24);
-            this.chkFirstBlank.TabIndex = 23;
+            this.chkFirstBlank.TabIndex = 3;
             this.chkFirstBlank.TabStop = false;
             this.chkFirstBlank.Text = "Blank";
             this.chkFirstBlank.UseVisualStyleBackColor = true;
@@ -371,7 +378,7 @@
             this.chkFirstClock.Location = new System.Drawing.Point(6, 36);
             this.chkFirstClock.Name = "chkFirstClock";
             this.chkFirstClock.Size = new System.Drawing.Size(158, 24);
-            this.chkFirstClock.TabIndex = 22;
+            this.chkFirstClock.TabIndex = 2;
             this.chkFirstClock.TabStop = false;
             this.chkFirstClock.Text = "Clock On Top";
             this.chkFirstClock.UseVisualStyleBackColor = true;
@@ -382,7 +389,7 @@
             this.txtFirstFrameDelay.MaxLength = 6;
             this.txtFirstFrameDelay.Name = "txtFirstFrameDelay";
             this.txtFirstFrameDelay.Size = new System.Drawing.Size(49, 20);
-            this.txtFirstFrameDelay.TabIndex = 22;
+            this.txtFirstFrameDelay.TabIndex = 1;
             this.txtFirstFrameDelay.Text = "0";
             // 
             // groupBox4
@@ -394,7 +401,7 @@
             this.groupBox4.Location = new System.Drawing.Point(371, 26);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(170, 123);
-            this.groupBox4.TabIndex = 22;
+            this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Last Frame";
             // 
@@ -404,7 +411,7 @@
             this.label4.Location = new System.Drawing.Point(6, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 24;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Frame Delay:";
             // 
             // chkLastBlank
@@ -413,7 +420,7 @@
             this.chkLastBlank.Location = new System.Drawing.Point(6, 59);
             this.chkLastBlank.Name = "chkLastBlank";
             this.chkLastBlank.Size = new System.Drawing.Size(158, 24);
-            this.chkLastBlank.TabIndex = 24;
+            this.chkLastBlank.TabIndex = 3;
             this.chkLastBlank.TabStop = false;
             this.chkLastBlank.Text = "Blank";
             this.chkLastBlank.UseVisualStyleBackColor = true;
@@ -424,7 +431,7 @@
             this.chkLastClock.Location = new System.Drawing.Point(6, 36);
             this.chkLastClock.Name = "chkLastClock";
             this.chkLastClock.Size = new System.Drawing.Size(158, 24);
-            this.chkLastClock.TabIndex = 22;
+            this.chkLastClock.TabIndex = 2;
             this.chkLastClock.TabStop = false;
             this.chkLastClock.Text = "Clock On Top";
             this.chkLastClock.UseVisualStyleBackColor = true;
@@ -435,7 +442,7 @@
             this.txtLastFrameDelay.MaxLength = 6;
             this.txtLastFrameDelay.Name = "txtLastFrameDelay";
             this.txtLastFrameDelay.Size = new System.Drawing.Size(49, 20);
-            this.txtLastFrameDelay.TabIndex = 22;
+            this.txtLastFrameDelay.TabIndex = 1;
             this.txtLastFrameDelay.Text = "0";
             // 
             // btnClose
@@ -443,7 +450,7 @@
             this.btnClose.Location = new System.Drawing.Point(466, 401);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 23;
+            this.btnClose.TabIndex = 11;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -458,27 +465,34 @@
             this.groupBox5.Location = new System.Drawing.Point(195, 85);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(170, 64);
-            this.groupBox5.TabIndex = 24;
+            this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Clock Style";
             // 
-            // cmbClockStyle
+            // txtCustomX
             // 
-            this.cmbClockStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbClockStyle.FormattingEnabled = true;
-            this.cmbClockStyle.Items.AddRange(new object[] {
-            "Standard",
-            "Small Left",
-            "Small Centre",
-            "Small Right",
-            "Small Mid Left",
-            "Small Mid Right",
-            "Small Custom"});
-            this.cmbClockStyle.Location = new System.Drawing.Point(6, 15);
-            this.cmbClockStyle.Name = "cmbClockStyle";
-            this.cmbClockStyle.Size = new System.Drawing.Size(156, 21);
-            this.cmbClockStyle.TabIndex = 0;
-            this.cmbClockStyle.SelectedIndexChanged += new System.EventHandler(this.cmbClockStyle_SelectedIndexChanged);
+            this.txtCustomX.Enabled = false;
+            this.txtCustomX.Location = new System.Drawing.Point(29, 39);
+            this.txtCustomX.Name = "txtCustomX";
+            this.txtCustomX.Size = new System.Drawing.Size(49, 20);
+            this.txtCustomX.TabIndex = 2;
+            // 
+            // txtCustomY
+            // 
+            this.txtCustomY.Enabled = false;
+            this.txtCustomY.Location = new System.Drawing.Point(113, 39);
+            this.txtCustomY.Name = "txtCustomY";
+            this.txtCustomY.Size = new System.Drawing.Size(49, 20);
+            this.txtCustomY.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(90, 42);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(17, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Y:";
             // 
             // label6
             // 
@@ -489,30 +503,18 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "X:";
             // 
-            // label7
+            // cmbClockStyle
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(90, 42);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(17, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Y:";
-            // 
-            // txtCustomY
-            // 
-            this.txtCustomY.Enabled = false;
-            this.txtCustomY.Location = new System.Drawing.Point(113, 39);
-            this.txtCustomY.Name = "txtCustomY";
-            this.txtCustomY.Size = new System.Drawing.Size(49, 20);
-            this.txtCustomY.TabIndex = 3;
-            // 
-            // txtCustomX
-            // 
-            this.txtCustomX.Enabled = false;
-            this.txtCustomX.Location = new System.Drawing.Point(29, 39);
-            this.txtCustomX.Name = "txtCustomX";
-            this.txtCustomX.Size = new System.Drawing.Size(49, 20);
-            this.txtCustomX.TabIndex = 4;
+            this.cmbClockStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbClockStyle.FormattingEnabled = true;
+            this.cmbClockStyle.Items.AddRange(new object[] {
+            "Standard",
+            "Small Custom"});
+            this.cmbClockStyle.Location = new System.Drawing.Point(6, 15);
+            this.cmbClockStyle.Name = "cmbClockStyle";
+            this.cmbClockStyle.Size = new System.Drawing.Size(156, 21);
+            this.cmbClockStyle.TabIndex = 0;
+            this.cmbClockStyle.SelectedIndexChanged += new System.EventHandler(this.cmbClockStyle_SelectedIndexChanged);
             // 
             // dmdEdit1
             // 
@@ -521,15 +523,8 @@
             this.dmdEdit1.Location = new System.Drawing.Point(6, 19);
             this.dmdEdit1.Name = "dmdEdit1";
             this.dmdEdit1.Size = new System.Drawing.Size(512, 128);
-            this.dmdEdit1.TabIndex = 4;
+            this.dmdEdit1.TabIndex = 0;
             this.dmdEdit1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dmdEdit1_MouseMove);
-            // 
-            // lblXY
-            // 
-            this.lblXY.Location = new System.Drawing.Point(251, 153);
-            this.lblXY.Name = "lblXY";
-            this.lblXY.Size = new System.Drawing.Size(75, 22);
-            this.lblXY.TabIndex = 20;
             // 
             // Form1
             // 
