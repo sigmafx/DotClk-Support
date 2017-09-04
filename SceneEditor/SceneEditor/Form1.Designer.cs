@@ -51,7 +51,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearMask = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCaptureGIF = new System.Windows.Forms.Button();
             this.lblXY = new System.Windows.Forms.Label();
+            this.dmdEdit1 = new SceneEditor.DmdEdit();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chkFirstBlank = new System.Windows.Forms.CheckBox();
@@ -69,7 +71,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbClockStyle = new System.Windows.Forms.ComboBox();
-            this.dmdEdit1 = new SceneEditor.DmdEdit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -112,7 +113,7 @@
             // 
             this.lblFrame.Location = new System.Drawing.Point(5, 153);
             this.lblFrame.Name = "lblFrame";
-            this.lblFrame.Size = new System.Drawing.Size(230, 22);
+            this.lblFrame.Size = new System.Drawing.Size(144, 22);
             this.lblFrame.TabIndex = 1;
             // 
             // btnSaveAs
@@ -313,6 +314,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCaptureGIF);
             this.groupBox2.Controls.Add(this.lblXY);
             this.groupBox2.Controls.Add(this.dmdEdit1);
             this.groupBox2.Controls.Add(this.btnClearMask);
@@ -332,12 +334,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Frames";
             // 
+            // btnCaptureGIF
+            // 
+            this.btnCaptureGIF.Location = new System.Drawing.Point(236, 154);
+            this.btnCaptureGIF.Name = "btnCaptureGIF";
+            this.btnCaptureGIF.Size = new System.Drawing.Size(90, 23);
+            this.btnCaptureGIF.TabIndex = 12;
+            this.btnCaptureGIF.Text = "Capture GIF";
+            this.btnCaptureGIF.UseVisualStyleBackColor = true;
+            this.btnCaptureGIF.Click += new System.EventHandler(this.btnCaptureGIF_Click);
+            // 
             // lblXY
             // 
-            this.lblXY.Location = new System.Drawing.Point(251, 153);
+            this.lblXY.Location = new System.Drawing.Point(155, 153);
             this.lblXY.Name = "lblXY";
             this.lblXY.Size = new System.Drawing.Size(75, 22);
             this.lblXY.TabIndex = 2;
+            // 
+            // dmdEdit1
+            // 
+            this.dmdEdit1.BrushSize = 1;
+            this.dmdEdit1.IsDirty = false;
+            this.dmdEdit1.Location = new System.Drawing.Point(6, 19);
+            this.dmdEdit1.Name = "dmdEdit1";
+            this.dmdEdit1.Size = new System.Drawing.Size(512, 128);
+            this.dmdEdit1.TabIndex = 0;
+            this.dmdEdit1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dmdEdit1_MouseMove);
             // 
             // groupBox3
             // 
@@ -516,16 +538,6 @@
             this.cmbClockStyle.TabIndex = 0;
             this.cmbClockStyle.SelectedIndexChanged += new System.EventHandler(this.cmbClockStyle_SelectedIndexChanged);
             // 
-            // dmdEdit1
-            // 
-            this.dmdEdit1.BrushSize = 1;
-            this.dmdEdit1.IsDirty = false;
-            this.dmdEdit1.Location = new System.Drawing.Point(6, 19);
-            this.dmdEdit1.Name = "dmdEdit1";
-            this.dmdEdit1.Size = new System.Drawing.Size(512, 128);
-            this.dmdEdit1.TabIndex = 0;
-            this.dmdEdit1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dmdEdit1_MouseMove);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,6 +620,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblXY;
+        private System.Windows.Forms.Button btnCaptureGIF;
     }
 }
 

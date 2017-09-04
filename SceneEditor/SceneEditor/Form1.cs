@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
@@ -340,12 +341,12 @@ namespace SceneEditor
             txtLastFrameDelay.Text = String.Format("{0}", parseValueInt);
 
             // Custom X, y
-            if(cmbClockStyle.SelectedIndex == 1)
+            if (cmbClockStyle.SelectedIndex == 1)
             {
                 byte parseValueByte;
 
                 value = txtCustomX.Text;
-                if(!byte.TryParse(value, out parseValueByte))
+                if (!byte.TryParse(value, out parseValueByte))
                 {
                     parseValueByte = 0;
                 }
@@ -402,6 +403,7 @@ namespace SceneEditor
             cmbBrushSize.SelectedIndex = 0;
             radPen.Checked = true;
             radFill.Checked = false;
+            cmbClockStyle.SelectedIndex = 0;
 
             // Clear dmd edit
             ClearDmdImage();
@@ -703,7 +705,7 @@ namespace SceneEditor
 
         private void cmbClockStyle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbClockStyle.SelectedIndex == 1)
+            if (cmbClockStyle.SelectedIndex == 1)
             {
                 txtCustomX.Enabled = true;
                 txtCustomY.Enabled = true;
@@ -718,6 +720,49 @@ namespace SceneEditor
         private void dmdEdit1_MouseMove(object sender, MouseEventArgs e)
         {
             lblXY.Text = String.Format("{0}, {1}", (e.X * 128) / dmdEdit1.Width, (e.Y * 32) / dmdEdit1.Height);
+        }
+
+        private void btnCaptureGIF_Click(object sender, EventArgs e)
+        {
+            // Show file open dialog
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "GIF File|*.gif";
+            ofd.Title = "Capture GIF...";
+            if (ofd.ShowDialog() == DialogResult.OK && ofd.FileName != String.Empty)
+            {
+                Image gifImg = Image.FromFile(ofd.FileName);
+                if (gifImg.Width == 128 || gifImg.Height == 32)
+                {
+                    FrameDimension dimension = new FrameDimension(gifImg.FrameDimensionsList[0]);
+                    int frameCount = gifImg.GetFrameCount(dimension);
+                    Byte[,] import = new byte[128, 32];
+
+                    for (int frame = 0; frame < frameCount; frame++)
+                    {
+                        gifImg.SelectActiveFrame(dimension, frame);
+
+                        Bitmap bmp = new Bitmap(gifImg);
+                        for (int x = 0; x < bmp.Width; x++)
+                        {
+                            for (int y = 0; y < bmp.Height; y++)
+                            {
+                                Color col = bmp.GetPixel(x, y);
+
+                                import[x, y] = Convert.ToByte(col.R >> 4);
+                            }
+                        }
+
+                        dots.Add((byte[,])import.Clone());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(this, "Invalid GIF selected", "Scene Editor", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+
+            scrlFrame.Maximum = dots.Count() - 1;
+            SetDmdImage(valuePrev);
         }
     }
 }
