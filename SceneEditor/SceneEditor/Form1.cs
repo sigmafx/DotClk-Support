@@ -731,33 +731,38 @@ namespace SceneEditor
             if (ofd.ShowDialog() == DialogResult.OK && ofd.FileName != String.Empty)
             {
                 Image gifImg = Image.FromFile(ofd.FileName);
-                if (gifImg.Width == 128 || gifImg.Height == 32)
+                FrameDimension dimension = new FrameDimension(gifImg.FrameDimensionsList[0]);
+                int frameCount = gifImg.GetFrameCount(dimension);
+                Byte[,] import = new byte[128, 32];
+                int offsetX = 0, offsetY = 0;
+
+                for (int frame = 0; frame < frameCount; frame++)
                 {
-                    FrameDimension dimension = new FrameDimension(gifImg.FrameDimensionsList[0]);
-                    int frameCount = gifImg.GetFrameCount(dimension);
-                    Byte[,] import = new byte[128, 32];
+                    gifImg.SelectActiveFrame(dimension, frame);
 
-                    for (int frame = 0; frame < frameCount; frame++)
+                    Bitmap bmp = new Bitmap(gifImg);
+                    for (int x = 0; x < 128; x++)
                     {
-                        gifImg.SelectActiveFrame(dimension, frame);
-
-                        Bitmap bmp = new Bitmap(gifImg);
-                        for (int x = 0; x < bmp.Width; x++)
+                        for (int y = 0; y < 32; y++)
                         {
-                            for (int y = 0; y < bmp.Height; y++)
-                            {
-                                Color col = bmp.GetPixel(x, y);
+                            int importX, importY;
 
+                            importX = x + offsetX;
+                            importY = y + offsetY;
+
+                            if(importX < bmp.Width && importY < bmp.Height)
+                            {
+                                Color col = bmp.GetPixel(importX, importY);
                                 import[x, y] = Convert.ToByte(col.R >> 4);
                             }
+                            else
+                            {
+                                import[x, y] = 0;
+                            }
                         }
-
-                        dots.Add((byte[,])import.Clone());
                     }
-                }
-                else
-                {
-                    MessageBox.Show(this, "Invalid GIF selected", "Scene Editor", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    dots.Add((byte[,])import.Clone());
                 }
             }
 
